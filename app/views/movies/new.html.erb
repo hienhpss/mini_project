@@ -1,0 +1,12 @@
+<h2>Add new movie</h2>
+<ul>
+<%= form_for @movie, :url => movies_path do |f| %>
+ <%= f.label :title, "Title" %>
+ <%= f.text_field :title %>
+ <%= f.label :description, "Description" %>
+ <%= f.text_area :description %>
+ <%= f.label :isbn, "Isbn #" %>
+ <%= f.text_area :description %>
+ <%= f.submit "Create" %>
+ <% end %>
+ </ul>
