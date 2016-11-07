@@ -1,14 +1,27 @@
-<h1>List Movies</h1>
+<div class="page-header"> 
+<h1>All Movies</h1>
+</div>
 
-<ul>
+
+
+  <div class="container">
+    <div class="row">  
+      <div class="col-xs-2">Title</div>
+      <div class="col-xs-2">Description</div>
+      <div class="col-xs-2">ISBN</div>
+      <div class="col-xs-6">Actions</div>
+    </div>
 <% @movies.each do |movie| %>
- <li>
- <%= movie.title %>
- <%= link_to 'Show', movie_path(movie) %>
- <%= link_to 'Edit', edit_movie_path(movie) %>
- <%= link_to 'Delete', movie_path(movie), :method => :delete, :data =>{ :confirm => "Are you sure?"} %>
- <%#= paginate @movies %>
- </li>
+  <div class="row">  
+    <div class="col-xs-2"><%= movie.title %></div>
+    <div class="col-xs-2"><%= movie.description %></div>
+    <div class="col-xs-2"><%= movie.isbn %></div>
+    <div class="col-xs-6"><%= link_to 'Show', movie_path(movie) %>
+   <%= link_to 'Edit', edit_movie_path(movie) %>
+   <%= link_to 'Delete', movie_path(movie), :method => :delete, :data =>{ :confirm => "Are you sure?"} %>
+   </div>
+   <%#= paginate @movies %> 
+  </div>
 <% end %>
-</ul>
+  </div>
 <%= link_to 'Add Movies', new_movie_path %>
