@@ -4,23 +4,32 @@
 </div>
 
 <div class="container">
-	<table>
-	  <%= form_for @movie, :url => movies_path do |f| %>
-		<tr> 
-			<th><%= f.label :title, "Title" %></th>
-			<td><%= f.text_field :title %></td>
-		</tr>
-		<tr> 
-			<th><%= f.label :description, "Description" %></th>
-			<td><%= f.text_area :description %></td>
-		</tr>
-		<tr> 
-			<th><%= f.label :isbn, "Isbn #" %></th>
-			<td><%= f.text_area :isbn %></td>
-		</tr>
-		<tr> 
-			<th><%= f.submit "Create", :class=>"btn btn-success"%></th>
-		</tr>
+	<%= form_for @movie, :url => movies_path do |f| %>
+	 	<table>
+			<tr> 
+				<td><%= f.label :title, "Title" %></td>
+				<td><%= f.text_field :title %></td>
+			</tr>
+			<tr> 
+				<td><%= f.label :description, "Description" %></td>
+				<td><%= f.text_area :description %></td>
+			</tr>
+			<tr> 
+				<td><%= f.label :isbn, "Isbn #" %></td>
+				<td><%= f.text_area :isbn %></td>
+			</tr>
+			<tr> 
+				<td><%= f.submit "Create", :class=>"btn btn-success"%></td>
+			</tr>
+		</table>
 	<% end %>
-	</table>
+<!-- 	<%= form_for @movie, :url => movies_path do |f| %>
+			<%= f.label :title, "Title" %>
+			<%= f.text_field :title %>
+			<%= f.label :description, "Description" %>
+			<%= f.text_area :description %>
+			<%= f.label :isbn, "Isbn #" %>
+			<%= f.text_area :isbn %>
+			<%= f.submit "Create", :class=>"btn btn-success"%>
+ 	<% end %> -->
 </div>

@@ -4,21 +4,24 @@
 </div>
 
 <div class="container">
-<table class ="table">
 	<%= form_for @movie, :url => movie_path(@movie), :method => :patch do |f| %>
-	<tr> 
-		<th><%= f.label :title, "Title" %></th>
-		<td><%= f.text_field :title %></td>
-	</tr>
-	<tr> 
-		<th><%= f.label :description, "Description" %></th>
-		<td><%= f.text_area :description %></td>
-	</tr>
-	<tr> 
-		<th><%= f.submit "Update", :class=> "btn btn-success"%></th>
-	</tr>
-<% end %>
-
-</table>
+		<table>
+			<tr> 
+				<th><%= f.label :title, "Title" %></th>
+				<td><%= f.text_field :title %></td>
+			</tr>
+			<tr> 
+				<th><%= f.label :description, "Description" %></th>
+				<td><%= f.text_area :description %></td>
+			</tr>
+			<tr> 
+				<th><%= f.label :isbn, "ISBN" %></th>
+				<td><%= f.text_area :isbn %></td>
+			</tr>
+			<tr> 
+				<th><%= f.submit "Update", :class=> "btn btn-success"%></th>
+			</tr>
+		</table>
+	<% end %>
 </div>
 
