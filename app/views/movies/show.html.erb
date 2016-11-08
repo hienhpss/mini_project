@@ -1,4 +1,13 @@
 
-<%= @movie.title %>
-<%= simple_format(@movie.description) %>
-<p><%= link_to 'Back to index', movies_path %></p>
+<div class="page-header">
+  <h1>Show Movies</h1>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center">    
+    	<h4><%= @movie.title %></h4>    
+      	<p><%= @movie.description %></p>    
+ 		<p><%= link_to 'Back to index', movies_path, :class=>"btn btn-success pull-center" %></p>
+    </div>
+
+</div>

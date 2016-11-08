@@ -1,27 +1,30 @@
 <div class="page-header"> 
-<h1>All Movies</h1>
+  <h1>All Movies</h1>
 </div>
-
-
 
   <div class="container">
     <div class="row">  
-      <div class="col-xs-2">Title</div>
-      <div class="col-xs-2">Description</div>
-      <div class="col-xs-2">ISBN</div>
-      <div class="col-xs-6">Actions</div>
+      <div class="col-xs-2"><h4>Title</h4></div>
+      <div class="col-xs-2"><h4>Description</h4></div>
+      <div class="col-xs-2"><h4>ISBN</h4></div>
+      <div class="col-xs-4"><h4>Actions</h4></div>
     </div>
 <% @movies.each do |movie| %>
   <div class="row">  
     <div class="col-xs-2"><%= movie.title %></div>
     <div class="col-xs-2"><%= movie.description %></div>
     <div class="col-xs-2"><%= movie.isbn %></div>
-    <div class="col-xs-6"><%= link_to 'Show', movie_path(movie) %>
-   <%= link_to 'Edit', edit_movie_path(movie) %>
-   <%= link_to 'Delete', movie_path(movie), :method => :delete, :data =>{ :confirm => "Are you sure?"} %>
+    <div class="col-xs-6"><%= link_to 'Show', movie_path(movie),:class=>"btn btn-primary"%>
+   <%= link_to 'Edit', edit_movie_path(movie), :class=>"btn btn-primary"%>
+   <%= link_to 'Delete', movie_path(movie), :method => :delete, :data =>{ :confirm => "Are you sure?"}, :class=>"btn btn-primary"%>
    </div>
    <%#= paginate @movies %> 
   </div>
 <% end %>
+  <div class="row">
+    <div class="col-xs-6"> 
+      <%= link_to 'Add Movies', new_movie_path, :class=>"btn btn-success" %>
+    </div>    
   </div>
-<%= link_to 'Add Movies', new_movie_path %>
+
+</div>

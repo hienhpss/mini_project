@@ -1,16 +1,26 @@
 
+<div class="page-header">
+  <h1>Add new movies</h1>
+</div>
 
-<h2>Add new movie</h2>
-<div class = "addmovie">
-<ul>
-<%= form_for @movie, :url => movies_path do |f| %>
-<li><%= f.label :title, "Title" %></li>
-<li><%= f.text_field :title %></li>
-<li><%= f.label :description, "Description" %></li>
-<li><%= f.text_area :description %></li>
-<li><%= f.label :isbn, "Isbn #" %></li>
-<li><%= f.text_area :isbn %></li>
-<li><%= f.submit "Create" %></li>
- <% end %>
- </ul>
+<div class="container">
+	<table>
+	  <%= form_for @movie, :url => movies_path do |f| %>
+		<tr> 
+			<th><%= f.label :title, "Title" %></th>
+			<td><%= f.text_field :title %></td>
+		</tr>
+		<tr> 
+			<th><%= f.label :description, "Description" %></th>
+			<td><%= f.text_area :description %></td>
+		</tr>
+		<tr> 
+			<th><%= f.label :isbn, "Isbn #" %></th>
+			<td><%= f.text_area :isbn %></td>
+		</tr>
+		<tr> 
+			<th><%= f.submit "Create", :class=>"btn btn-success"%></th>
+		</tr>
+	<% end %>
+	</table>
 </div>
